@@ -16,8 +16,8 @@ A modular, pytest-based evaluation and regression benchmarking suite for LLM age
 
 ```
 01-agent-eval-framework/
-├── .github/workflows/
-│   └── ci.yml               # Automated CI test pipeline
+├── ci/
+│   └── ci.yml               # Automated CI test pipeline configuration
 ├── datasets/
 │   └── cases.json           # Evaluation benchmark cases (16 cases)
 ├── reports/                 # Generated evaluation & regression reports
