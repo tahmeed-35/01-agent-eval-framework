@@ -1,0 +1,139 @@
+[
+  {
+    "case_id": "CALC-001",
+    "description": "Basic addition arithmetic",
+    "query": "Calculate 25 + 75",
+    "expected_tool": "calculate",
+    "expected_args": { "expression": "25 + 75" },
+    "expected_keywords": ["100"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "CALC-002",
+    "description": "Multiplication with precedence",
+    "query": "What is 12 * 8 + 4",
+    "expected_tool": "calculate",
+    "expected_args": { "expression": "12 * 8 + 4" },
+    "expected_keywords": ["100"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "CALC-003",
+    "description": "Division with float result",
+    "query": "Compute 100 / 4",
+    "expected_tool": "calculate",
+    "expected_args": { "expression": "100 / 4" },
+    "expected_keywords": ["25"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "CALC-004",
+    "description": "Parenthesized math calculation",
+    "query": "calculate (10 + 5) * 2",
+    "expected_tool": "calculate",
+    "expected_args": { "expression": "(10 + 5) * 2" },
+    "expected_keywords": ["30"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "WEATH-001",
+    "description": "Standard weather lookup for New York",
+    "query": "What is the weather in New York?",
+    "expected_tool": "get_weather",
+    "expected_args": { "location": "New York" },
+    "expected_keywords": ["New York", "°C"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "WEATH-002",
+    "description": "Weather lookup for London",
+    "query": "Can you check the weather in London right now?",
+    "expected_tool": "get_weather",
+    "expected_args": { "location": "London" },
+    "expected_keywords": ["London", "Rainy"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "WEATH-003",
+    "description": "Weather lookup for Tokyo",
+    "query": "Show me the weather in Tokyo",
+    "expected_tool": "get_weather",
+    "expected_args": { "location": "Tokyo" },
+    "expected_keywords": ["Tokyo", "Sunny"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "WEATH-004",
+    "description": "Weather lookup for Berlin",
+    "query": "What is the current weather in Berlin?",
+    "expected_tool": "get_weather",
+    "expected_args": { "location": "Berlin" },
+    "expected_keywords": ["Berlin"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "TEXT-001",
+    "description": "Text analysis on positive feedback",
+    "query": "Analyze text: This new product is awesome and great, I love the speed!",
+    "expected_tool": "analyze_text",
+    "expected_keywords": ["Analysis", "positive"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "TEXT-002",
+    "description": "Text analysis on negative feedback",
+    "query": "Analyze text: The server performance was terrible and very slow with frequent failing bugs.",
+    "expected_tool": "analyze_text",
+    "expected_keywords": ["Analysis", "negative"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "TEXT-003",
+    "description": "Word count extraction",
+    "query": "Word count for this report: Machine learning systems require continuous monitoring and evaluation.",
+    "expected_tool": "analyze_text",
+    "expected_keywords": ["words"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "CONV-001",
+    "description": "Direct greeting without tool invocation",
+    "query": "Hello there! How are you doing today?",
+    "expected_tool": null,
+    "expected_keywords": ["understood your query"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "CONV-002",
+    "description": "General explanation query without tools",
+    "query": "Explain what agentic workflows are in computer science.",
+    "expected_tool": null,
+    "expected_keywords": ["agentic workflows"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "EDGE-001",
+    "description": "Weather query for unlisted city fallback",
+    "query": "Tell me the weather in Paris",
+    "expected_tool": "get_weather",
+    "expected_args": { "location": "Paris" },
+    "expected_keywords": ["Paris"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "EDGE-002",
+    "description": "Calculation with power operator",
+    "query": "Calculate 2^8",
+    "expected_tool": "calculate",
+    "expected_keywords": ["256"],
+    "max_latency_ms": 250.0
+  },
+  {
+    "case_id": "EDGE-003",
+    "description": "Sentiment analysis on neutral sentence",
+    "query": "Sentiment of The quick brown fox jumps over the lazy dog.",
+    "expected_tool": "analyze_text",
+    "expected_keywords": ["neutral"],
+    "max_latency_ms": 250.0
+  }
+]
